@@ -150,6 +150,38 @@
       transform: translateY(-1px);
     }
 
+    .answer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      width: 100%;
+    }
+
+    .answer-photo {
+      overflow: hidden;
+      border-radius: 6px;
+      max-height: 200px;
+    }
+
+    .answer-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% 50%;
+    }
+
+    .answer-text {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .answer-emoji {
+      font-size: 18px;
+    }
+
     .answer-btn:active {
       transform: scale(0.98);
     }
@@ -281,6 +313,16 @@
 
   <script>
     const questions = [
+      {
+        text: "Which landscape feels most like your dream Southern Utah stop?",
+        answers: [
+          { text: "Iconic arches and red rock drama", regions: ["moab"], emoji: "🏜️", image: "./images/arches.png" },
+          { text: "Colorful cliffs and hidden canyons", regions: ["capitolreef"], emoji: "🪨", image: "./images/capitol-reef.png" },
+          { text: "Hoodoos and high-elevation wonder", regions: ["bryce"], emoji: "🌄", image: "./images/bryce.png" },
+          { text: "Tall cliffs and big canyon energy", regions: ["zion"], emoji: "⛰️", image: "./images/zion.png" }
+
+        ]
+      },
       {
         text: "Your ideal hike is…",
         answers: [
@@ -429,8 +471,13 @@
         <div class="answers">
           ${q.answers.map((a, i) => `
             <button class="answer-btn" onclick="selectAnswer([${a.regions.map(r => `'${r}'`).join(', ')}])">
-              <span style="font-size: 18px; margin-right: 12px;">${a.emoji}</span>
-              ${a.text}
+              <div class="answer-content">
+                ${a.image ? `<div class="answer-photo"><img src="${a.image}" alt="${a.text}"></div>` : ''}
+                <div class="answer-text">
+                  <span class="answer-emoji">${a.emoji || '📍'}</span>
+                  <span>${a.text}</span>
+                </div>
+              </div>
             </button>
           `).join('')}
         </div>
