@@ -312,14 +312,90 @@
   </div>
 
   <script>
+    const regions = {
+      moab: {
+        name: "Moab, Arches & Canyonlands",
+        emoji: "🏜️",
+        subtitle: "The iconic red rock showcase",
+        estimated_travel_dates: "March 13 - 27, 2027",
+        description: "Classic red rock formations, lower elevation, desert warmth. Famous arches, colorful canyons, and the most accessible of your options.",
+        drive: "4 hours from SLC via I-70. Pretty straightforward but mostly interstate. You get to go immediately from landing to exploring.",
+        weekend: "Day 1: Arches National Park (Delicate Arch, iconic walks). Day 2: Canyonlands overlooks and scenic drives. Day 3: Dead Horse Point or more Moab relaxation.",
+        vibes: [
+          "Iconic, Instagram-famous formations",
+          "Warm desert, lower elevation",
+          "Good variety of hike difficulty",
+          "Closest to SLC, minimize drive time",
+          "More crowded but energetic"
+        ],
+        logistics: "Fly SLC → direct drive Moab (~4hrs). Bus option available but drives are beautiful in this region.",
+        image: "./images/arches.png"
+      },
+      capitolreef: {
+        name: "Capitol Reef National Park",
+        emoji: "🏜️",
+        subtitle: "The colorful slot canyon hideaway",
+        estimated_travel_dates: "March 28 - April 3, 2027",
+        description: "Colorful cliffs, water features, slot canyons, and fewer crowds. Often overlooked but genuinely special geology. Less famous means more breathing room.",
+        drive: "2.5 hours from SLC via scenic UT-24. Or 2 hours from Moab. Pretty drive, reasonable time investment.",
+        weekend: "Day 1: Hickman Bridge, scenic drive through the park. Day 2: Capitol Gorge hike (water, canyons). Day 3: Cassidy Arch or relax. Maybe add Goblin Valley (nearby weird rock spires).",
+        vibes: [
+          "Colorful, unique geology",
+          "Fewer crowds, more solitude",
+          "Water features (slot canyons, waterfalls)",
+          "Good for curious explorers",
+          "Perfect middle-ground for a weekend"
+        ],
+        logistics: "Fly SLC → Capitol Reef (2.5hrs), or Moab → Capitol Reef (2hrs). Quieter alternative to the big parks.",
+        image: "./images/capitol-reef.png"
+      },
+      bryce: {
+        name: "Bryce Canyon",
+        emoji: "🪨",
+        subtitle: "The alien hoodoo wonderland",
+        estimated_travel_dates: "April 4 - 17, 2027",
+        description: "Totally unique spiky hoodoo formations, high elevation, genuinely otherworldly geology. Quiet, introspective, smaller crowds. The scenic drive experience (especially from Capitol Reef) is part of the magic.",
+        drive: "From SLC direct: 4+ hours. From Capitol Reef via UT-12 Scenic Byway: 2 hours of some of the most stunning scenic drive in Utah—this is the move.",
+        weekend: "Sunrise at Bryce Point. Navajo Loop or Queens Garden hikes (shorter but intense). Rim walks. Maybe add Escalante detour (30min away) for slot canyons. Pure vibes, good for reflection.",
+        vibes: [
+          "Genuinely alien landscape",
+          "Higher elevation, cooler, thinner air",
+          "Fewer crowds, contemplative",
+          "Best accessed via scenic UT-12 drive",
+          "Shorter hikes with massive payoff",
+          "Perfect if drive experience matters"
+        ],
+        logistics: "Recommend: Fly SLC → Moab or Capitol Reef → scenic drive to Bryce. OR SLC → direct drive (meh). The UT-12 drive IS worth the experience.",
+        image: "./images/bryce.png"
+      },
+      zion: {
+        name: "Zion & Cedar City",
+        emoji: "⛰️",
+        subtitle: "The epic canyon adventure",
+        estimated_travel_dates: "April 18 - May 1, 2027",
+        description: "Towering dramatic cliffs, lush canyon floors, most famous hiking (Angels Landing, The Narrows). Most athletic and most crowded, but absolutely stunning and that feeling of being small in nature is real.",
+        drive: "4-5 hours from SLC via I-15. Direct, efficient, not scenic but straightforward. No time wasted on driving.",
+        weekend: "Day 1: Angels Landing (if you're game) or The Narrows. Day 2: More canyon exploring, maybe Observation Point. Day 3: Emerald Pools or Temple of Sinawava. This is the 'epic' weekend.",
+        vibes: [
+          "Massive towering cliffs",
+          "Most challenging hikes",
+          "Athletic, humbling, epic",
+          "More crowded but energy is high",
+          "Direct drive from SLC",
+          "The most 'famous' experience"
+        ],
+        logistics: "Fly SLC → direct I-15 to Zion (4-5hrs). Most straightforward logistics, most famous park, most athletic. No scenic drive but efficiency for working remote.",
+        image: "./images/zion.png"
+      }
+    };
     const questions = [
       {
         text: "Which landscape feels most like your dream Southern Utah stop?",
         answers: [
-          { text: "Iconic arches and red rock drama", regions: ["moab"], emoji: "🏜️", image: "./images/arches.png" },
-          { text: "Colorful cliffs and hidden canyons", regions: ["capitolreef"], emoji: "🪨", image: "./images/capitol-reef.png" },
-          { text: "Hoodoos and high-elevation wonder", regions: ["bryce"], emoji: "🌄", image: "./images/bryce.png" },
-          { text: "Tall cliffs and big canyon energy", regions: ["zion"], emoji: "⛰️", image: "./images/zion.png" }
+          { text: "Iconic arches and red rock drama", regions: ["moab"], emoji: "🏜️", image: regions["moab"].image },
+          { text: "Colorful cliffs and hidden canyons", regions: ["capitolreef"], emoji: "🪨", image: regions["capitolreef"].image },
+          { text: "Hoodoos and high-elevation wonder", regions: ["bryce"], emoji: "🌄", image: regions["bryce"].image },
+          { text: "Tall cliffs and big canyon energy", regions: ["zion"], emoji: "⛰️", image: regions["zion"].image }
 
         ]
       },
@@ -383,75 +459,6 @@
       }
     ];
 
-    const regions = {
-      moab: {
-        name: "Moab, Arches & Canyonlands",
-        emoji: "🏜️",
-        subtitle: "The iconic red rock showcase",
-        description: "Classic red rock formations, lower elevation, desert warmth. Famous arches, colorful canyons, and the most accessible of your options.",
-        drive: "4 hours from SLC via I-70. Pretty straightforward but mostly interstate. You get to go immediately from landing to exploring.",
-        weekend: "Day 1: Arches National Park (Delicate Arch, iconic walks). Day 2: Canyonlands overlooks and scenic drives. Day 3: Dead Horse Point or more Moab relaxation.",
-        vibes: [
-          "Iconic, Instagram-famous formations",
-          "Warm desert, lower elevation",
-          "Good variety of hike difficulty",
-          "Closest to SLC, minimize drive time",
-          "More crowded but energetic"
-        ],
-        logistics: "Fly SLC → direct drive Moab (~4hrs). Bus option available but drives are beautiful in this region."
-      },
-      capitolreef: {
-        name: "Capitol Reef National Park",
-        emoji: "🏜️",
-        subtitle: "The colorful slot canyon hideaway",
-        description: "Colorful cliffs, water features, slot canyons, and fewer crowds. Often overlooked but genuinely special geology. Less famous means more breathing room.",
-        drive: "2.5 hours from SLC via scenic UT-24. Or 2 hours from Moab. Pretty drive, reasonable time investment.",
-        weekend: "Day 1: Hickman Bridge, scenic drive through the park. Day 2: Capitol Gorge hike (water, canyons). Day 3: Cassidy Arch or relax. Maybe add Goblin Valley (nearby weird rock spires).",
-        vibes: [
-          "Colorful, unique geology",
-          "Fewer crowds, more solitude",
-          "Water features (slot canyons, waterfalls)",
-          "Good for curious explorers",
-          "Perfect middle-ground for a weekend"
-        ],
-        logistics: "Fly SLC → Capitol Reef (2.5hrs), or Moab → Capitol Reef (2hrs). Quieter alternative to the big parks."
-      },
-      bryce: {
-        name: "Bryce Canyon",
-        emoji: "🪨",
-        subtitle: "The alien hoodoo wonderland",
-        description: "Totally unique spiky hoodoo formations, high elevation, genuinely otherworldly geology. Quiet, introspective, smaller crowds. The scenic drive experience (especially from Capitol Reef) is part of the magic.",
-        drive: "From SLC direct: 4+ hours. From Capitol Reef via UT-12 Scenic Byway: 2 hours of some of the most stunning scenic drive in Utah—this is the move.",
-        weekend: "Sunrise at Bryce Point. Navajo Loop or Queens Garden hikes (shorter but intense). Rim walks. Maybe add Escalante detour (30min away) for slot canyons. Pure vibes, good for reflection.",
-        vibes: [
-          "Genuinely alien landscape",
-          "Higher elevation, cooler, thinner air",
-          "Fewer crowds, contemplative",
-          "Best accessed via scenic UT-12 drive",
-          "Shorter hikes with massive payoff",
-          "Perfect if drive experience matters"
-        ],
-        logistics: "Recommend: Fly SLC → Moab or Capitol Reef → scenic drive to Bryce. OR SLC → direct drive (meh). The UT-12 drive IS worth the experience."
-      },
-      zion: {
-        name: "Zion & Cedar City",
-        emoji: "⛰️",
-        subtitle: "The epic canyon adventure",
-        description: "Towering dramatic cliffs, lush canyon floors, most famous hiking (Angels Landing, The Narrows). Most athletic and most crowded, but absolutely stunning and that feeling of being small in nature is real.",
-        drive: "4-5 hours from SLC via I-15. Direct, efficient, not scenic but straightforward. No time wasted on driving.",
-        weekend: "Day 1: Angels Landing (if you're game) or The Narrows. Day 2: More canyon exploring, maybe Observation Point. Day 3: Emerald Pools or Temple of Sinawava. This is the 'epic' weekend.",
-        vibes: [
-          "Massive towering cliffs",
-          "Most challenging hikes",
-          "Athletic, humbling, epic",
-          "More crowded but energy is high",
-          "Direct drive from SLC",
-          "The most 'famous' experience"
-        ],
-        logistics: "Fly SLC → direct I-15 to Zion (4-5hrs). Most straightforward logistics, most famous park, most athletic. No scenic drive but efficiency for working remote."
-      }
-    };
-
     let scores = { moab: 0, capitolreef: 0, bryce: 0, zion: 0 };
     let currentQuestion = 0;
 
@@ -509,6 +516,12 @@
       <div class="result-emoji">${result.emoji}</div>
       <div class="result-title">${result.name}</div>
       <div class="result-subtitle">${result.subtitle}</div>
+
+      <div class="result-image">
+        <img src="${result.image}" alt="${result.name}" style="width: 100%; border-radius: var(--radius); margin-bottom: 1rem;">
+      </div>
+      
+      <div class="result-subtitle">Estimated travel dates: ${result.estimated_travel_dates}</div>
       
       <div class="result-card">
         <div class="result-description">${result.description}</div>
